@@ -54,5 +54,3 @@ func (rc *RedisCache) Get(key string) (string, error) {
 	}
 	return val, nil
 }
-
-
