@@ -55,20 +55,4 @@ func (rc *RedisCache) Get(key string) (string, error) {
 	return val, nil
 }
 
-func main() {
-	// Example usage
-	cache := NewRedisCache("localhost:6379", "", 0)
 
-	// Set a value in Redis with expiration of 1 minute
-	err := cache.Set("mykey", "myvalue", time.Minute)
-	if err != nil {
-		log.Fatalf("Error setting value in Redis: %v", err)
-	}
-
-	// Get the value from Redis
-	val, err := cache.Get("mykey")
-	if err != nil {
-		log.Fatalf("Error getting value from Redis: %v", err)
-	}
-	fmt.Println("Value from Redis:", val)
-}
